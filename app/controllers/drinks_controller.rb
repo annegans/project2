@@ -1,4 +1,4 @@
-class DrinksController < ActionController::Base
+class DrinksController < ApplicationController
   def index
     @drinks = Drink.all
   end

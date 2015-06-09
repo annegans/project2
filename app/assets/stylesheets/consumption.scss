@@ -1,0 +1,86 @@
+
+$prim-color: pink;
+$sec-color: blue;
+$thirs-color: red;
+
+
+.container {
+  padding: 20px;
+}
+
+
+.box {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: -6px;
+  height: 300px;
+  border: 1px solid navy;
+}
+
+.box-1 {
+  width: 10%;
+}
+
+.box-2 {
+  width: 20%;
+}
+
+.box-3 {
+  width: 30%;
+}
+
+.box-4 {
+  width: 40%;
+}
+
+.box-5 {
+  width: 50%;
+}
+
+.box-6 {
+  width: 60%;
+}
+
+.box-7 {
+  width: 70%;
+}
+
+.box-8 {
+  width: 80%;
+}
+
+.box-9 {
+  width: 90%;
+}
+
+.box-10 {
+  width: 100%;
+}
+
+.bg-pink {
+  background-color: $prim-color;
+}
+
+.box-title {
+  font-size: 16px;
+  font-weight: 100;
+  color: black;
+  text-align: center;
+}
+
+
+/*****
+
+jQuery and animations
+
+******/
+
+#usertoggle {
+  display: none;
+}
+
+#drinktoggle {
+  display: none;
+}
+
+

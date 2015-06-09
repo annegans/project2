@@ -1,5 +1,72 @@
-<h1>Welcome consumation home page</h1>
 
-<div><% @consumations.each do |consumation| %></div>
-  <%= consumation.drink_id %>
-<% end %>
+<div class="container">
+
+  <div class="box box-10">
+
+    <div class="box box-3 bg-pink">
+      <div class="box-title">
+        COUNT
+        <div class="sub-heading"><%= @bac %></div>
+      </div>
+    </div>
+    <div class="box box-4">
+      <div class="box-title">
+         ALCOHOL TRACKER
+        <div class="sub-heading"><%= @user.name %></div>
+        <button class="userinfo">info</button>
+      </div>
+    </div>
+    <div class="box box-3">
+      <div class="box-title">
+        AMOUNT OF CALORIES
+      <div class="sub-heading"> <%= @totalcalories %></div>
+     </div>
+    </div>
+    <div class="box box-10" id="usertoggle">
+      <div class="box-title">
+        USERS INFO
+        <div class="sub-heading"><%= @user.name %></div>
+        <div class="sub-heading"><%= @user.height %></div>
+        <div class="sub-heading"><%= @user.weight %></div>
+        <div class="sub-heading"><%= @user.age %></div>
+      </div>
+    </div>
+    <div class="box box-2 bg-pink">Test</div>
+    <div class="box box-3">
+      <div class="box-title">
+        ADD A DRINK
+        <p><%= link_to "add a drink",new_user_consumption_path %></p>
+     </div>
+    </div>
+
+    <div class="box box-2">
+    <div class="box-title">
+        AMOUNT OF DRINKS
+      <div class="sub-heading"><%= @user.drinks.count %></div>
+     </div>
+    </div>
+    <div class="box box-3">
+      <div class="box-title">
+        LIST OF DRINKS
+        <button class="drinkinfo">LIST</button>
+      </div>
+    </div>
+    <div class="box box-10" id="drinktoggle">
+      <% @user.drinks.each do |drink| %>
+        <%= drink.name %>
+      <% end %>
+      <button>edit</button>   
+    </div>
+
+    <div class="box box-3 bg-pink">Test</div>
+    <div class="box box-3">Test</div>
+    <div class="box box-4">Test</div>
+
+    
+
+</div>
+
+
+
+
+
