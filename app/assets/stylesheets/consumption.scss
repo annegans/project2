@@ -14,7 +14,7 @@ $thirs-color: red;
   vertical-align: top;
   margin-right: -6px;
   height: 300px;
-  border: 1px solid navy;
+  border: 1px solid black;
 }
 
 .box-1 {
@@ -66,8 +66,18 @@ $thirs-color: red;
   font-weight: 100;
   color: black;
   text-align: center;
+  padding: 117px;
+  font-size: 20px;
 }
 
+
+.subheadding{
+
+}
+
+#deletedrinklist {
+  display: inline-block;
+}
 
 /*****
 
@@ -83,4 +93,8 @@ jQuery and animations
   display: none;
 }
 
+
+#adddrinktoggle {
+  display: none;
+}
 

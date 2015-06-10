@@ -1,8 +1,7 @@
 <h1>What did you drink?</h1>
-
-<%= form_for [@user, @consumption] do |f| %>
-
-  <%= f.collection_select(:drink, Drink.all, :id, :name) %> 
-  <%= f.submit %>
-
-<% end %>
+<div id="drinkForm">
+  <%= form_for [@user, @consumption] do |f| %>
+    <%= f.collection_select(:drink, Drink.all, :id, :name) %>
+    <%= f.submit %>
+  <% end %>
+</div>

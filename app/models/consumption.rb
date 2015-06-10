@@ -19,6 +19,31 @@ class Consumption < ActiveRecord::Base
     return bac
  end
 
+ def self.drunk_level(bac) 
+   if bac < 0.2
+    "drink up mate"
+   elsif bac > 02 && bac < 0.5
+    "you're getting there"
+   elsif bac > 05 && bac < 0.9
+    "heals in the seeling"
+   elsif bac > 0.9 && bac < 1
+    "the first one to oblivian wins!!!"
+   else  bac > 1 && bac > 1.5
+    "you're just shit faced"
+  end
+ end
+
+ def self.drive(bac)
+  if bac < 0.5
+    "you can drive"
+  else 
+    "do not drive"
+  end
+end
+
+
+
+
 def self.calcutate_calories(user)
     total_calories = user.drinks.map(&:calories).inject(:+)
 end
