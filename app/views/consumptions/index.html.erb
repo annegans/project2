@@ -7,7 +7,7 @@
     <div class="box box-3 bg-pink">
       <div class="box-title">
         COUNT
-        <div class="sub-heading"><%= @bac %></div>
+        <div class="sub-heading" id="calulate-bac"></div>
       </div>
     </div>
     <div class="box box-4">
@@ -20,7 +20,7 @@
     <div class="box box-3">
       <div class="box-title">
         AMOUNT OF CALORIES
-      <div class="sub-heading"> <%= @totalcalories %></div>
+      <div class="sub-heading" id="calulate-calories"></div>
      </div>
     </div>
     <div class="box box-10" id="usertoggle">
@@ -33,7 +33,7 @@
       </div>
     </div>
     <div class="box box-2 bg-pink">
-    <div><%= @drunkLevel %></div>
+    <div id= "drunk-level"></div>
     </div>
     <div class="box box-3">
       <div class="box-title">
@@ -45,7 +45,7 @@
     <div class="box box-2">
     <div class="box-title">
         AMOUNT OF DRINKS
-      <div class="sub-heading"><%= @user.drinks.count %></div>
+      <div class="sub-heading" id="drink-count"></div>
      </div>
     </div>
     <div class="box box-3">
@@ -78,7 +78,7 @@
      <button id="add_drink">add drink</button>
     </div>
     <div class="box box-4">
-      <div><%= @drive %></div>
+      <div id="drive"></div>
     </div>
 
 

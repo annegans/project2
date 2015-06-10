@@ -41,10 +41,7 @@ class Consumption < ActiveRecord::Base
   end
 end
 
-
-
-
-def self.calcutate_calories(user)
+def self.calculate_calories(user)
     total_calories = user.drinks.map(&:calories).inject(:+)
 end
 
