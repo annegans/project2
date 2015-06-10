@@ -19,17 +19,15 @@ class ConsumptionsController < ApplicationController
 
   def create
    consumption = Consumption.create(drink_id: params[:consumption][:drink], user_id: params[:user_id])
-  
+   drink_name = consumption.drink.name
+   drinks_count =  User.find(params[:user_id]).drinks.count
 
-    # consumption = Consumption.create(
-    #   drink_id: params[:drink_id], 
-    #   user_id: params[:user_id]
-    #   )
-    
+   
   respond_to do |format|
     if consumption.save
       format.html {redirect_to user_consumptions_path}
-      format.json { render json: consumption, status: :created }
+      format.json { render json: {drink_name: drink_name, drinks_count: drinks_count } , status: :created }
+
     else
       format.html { render action: "new" }
       format.json { render json: consumption.errors, status: :unprocessable_entity }

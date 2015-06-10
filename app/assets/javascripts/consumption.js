@@ -20,16 +20,17 @@ function createConsumption(e) {
  var drinkId = $('#consumption_drink').val()
   $.ajax({
    type: 'POST',
-   url: '/users/10/consumptions',
+   url: '/users/12/consumptions',
    data: {  
     format: 'json',  
-    consumption:{ drink: drinkId } 
+   consumption:{ drink: drinkId } 
    }
  }).done(function(data){
-    $('#hello').empty();
-    var newDrinks = $($.parseHTML(data)).filter('#hello');
-    console.log(data)
-     $('#hello').append(newDrinks);
+    $('#hallo').empty();
+    console.log(data.drink_name, data.drinks_count)
+     $('#hallo').append(data.drink_name);
+     $('#hallo').append(data.drinks_count);
+
   
     
  })
