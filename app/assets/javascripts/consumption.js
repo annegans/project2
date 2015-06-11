@@ -8,7 +8,9 @@ var baseURL = e.currentTarget.baseURI
    type: 'GET',
    url: baseURL + '/new'
  }).done(function(response){
+   // $('#drink_form').emty()
    var form = $($.parseHTML(response)).filter('#drinkForm')
+   // $('.add-drink').append(form)
    $('#drink_form').append(form)
  })
 }
@@ -37,28 +39,52 @@ function createConsumption(e) {
  })
 }
 
+function populatePage(){
+  $.ajax({
+    type: 'get',
+    url: '/users/12/consumptions',
+    data: {  
+      format: 'json',
+      // consumption:{ drink: drinkId } 
+    }
+  }).done(function(data){
+    $('#drink-count').html(data.drinks_count);
+    $('#calulate-calories').html(data.totalcalories);
+    $('#calulate-bac').html(data.bac); 
+  })
+}
 
 
-// function deleteConsumption(e){
-//   var deleteBottom = $(this)
-//   var itemId = $(this).data('id');
-//   $.ajax({
-//   type: "DELETE",
-//   url: "/items/" + itemId,
-//   dataType: 'json'
-// }).done(function(data){
-//   console.log(data);
-//   deleteBottom.parent().remove()
 
-// })
-// }
+function deleteConsumption(e){
+
+  var deleteBottom = $(this)
+  var consumptionId = $(this).data('id');
+  console.log('works')
+  $.ajax({
+  type: "DELETE",
+  url: "/users/12/consumptions/" + consumptionId,
+  dataType: 'json'
+}).done(function(data){
+  console.log(data);
+  deleteBottom.parent().remove()
+
+})
+}
 
 
 $(document).ready(function(){
 
+populatePage();
+
+setInterval(function(){ 
+  populatePage(); 
+}, 1000);
+
 $("#add_drink").on('click', addConsumption);
+
 $("#drink_form").on('submit', '#new_consumption', createConsumption)
- $('#todo-list').on('click', '.destroy', deleteItems)
+ $('.container').on('click', '#destroy', deleteConsumption)
 
 $( ".userinfo" ).click(function() {
   $( "#usertoggle").slideToggle( "slow" );

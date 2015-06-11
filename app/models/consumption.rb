@@ -45,8 +45,9 @@ def self.calculate_calories(user)
     total_calories = user.drinks.map(&:calories).inject(:+)
 end
 
-
-
+# def show_name
+#  @drinks.where(name:"beer")
+# end
 end
 
 

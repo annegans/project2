@@ -7,9 +7,19 @@ class ConsumptionsController < ApplicationController
     @totalcalories = Consumption.calculate_calories(@user)
     # @calories = Consumption.caculate_calories(@users)
     @consumption = Consumption.new 
+    drinks_count =  @user.drinks.count
     @user = User.find(params[:user_id])
     @drunkLevel = Consumption.drunk_level(@bac)
     @drive = Consumption.drive(@bac)
+    @drink_beer = @user.drinks.all.where(name:"beer")
+    # @drink_type = @user.drinks.all.where(name:"")
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: {bac: @bac, drinks_count: drinks_count, totalcalories: @totalcalories} }
+    
+    end
+
   end
 
   def new
@@ -28,8 +38,6 @@ class ConsumptionsController < ApplicationController
    drinks_bac =  Consumption.calculate_bag(@user)
    drunk_level = Consumption.drunk_level(@bac)
    drive = Consumption.drive(@bac)
-
-
    
   respond_to do |format|
     if consumption.save
@@ -45,9 +53,13 @@ class ConsumptionsController < ApplicationController
   end
 
   def destroy
-    @consumption = Consumption.find(params[:id])
-    @consumption.destroy
-    redirect_to user_consumptions_path
+    consumption = Consumption.find(params[:id])
+    consumption.destroy
+    
+    respond_to do |format|
+      format.html  
+      format.json { render json: { head: :no_content } }
+    end
   end
 
   def show  
@@ -55,8 +67,6 @@ class ConsumptionsController < ApplicationController
   end 
 
 
-
 end
 
-  # index view
-  # <%= button_to('Delete Planet', planet_path(planet), method: :delete, data: {confirm: 'Energise the demolition beam?'} ) %>
+ 

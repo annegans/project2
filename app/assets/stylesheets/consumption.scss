@@ -15,6 +15,7 @@ $thirs-color: red;
   margin-right: -6px;
   height: 300px;
   border: 1px solid black;
+
 }
 
 .box-1 {
@@ -79,6 +80,10 @@ $thirs-color: red;
   display: inline-block;
 }
 
+#drink-list {
+  overflow: scroll;
+}
+
 /*****
 
 jQuery and animations
@@ -91,6 +96,7 @@ jQuery and animations
 
 #drinktoggle {
   display: none;
+  overflow-y: scroll;
 }
 
 

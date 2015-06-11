@@ -36,10 +36,9 @@
     <div id= "drunk-level"></div>
     </div>
     <div class="box box-3">
-      <div class="box-title">
+      <div class="box-title" id="drink_form">
         ADD A DRINK
-        <p><%= link_to "add a drink",new_user_consumption_path %></p>
-        <button class="adddrink">add drink</button>
+        <button id="add_drink">add drink</button>
      </div>
     </div>
     <div class="box box-2">
@@ -48,8 +47,8 @@
       <div class="sub-heading" id="drink-count"></div>
      </div>
     </div>
-    <div class="box box-3">
-      <div class="box-title">
+    <div class="box box-3" >
+      <div class="box-title" id="drink-list">
         LIST OF DRINKS
         <button class="drinkinfo">LIST</button>
       </div>
@@ -58,24 +57,28 @@
       <% @user.consumptions.each do |consumption| %>
         <ul id="deletedrinklist">
           <li><%= consumption.drink.name %></li>
-          <li><%= link_to('delete consumption!', user_consumption_path(consumption.user.id, consumption.id), method: :delete) %></li>
+          <button id="destroy" data-id="<%= consumption.id %>">Delete</button>
         </ul>
       <% end %> 
     </div>
 
     <div class="box box-10" id="adddrinktoggle">
-      <div class="box-title">
+      <div class="box-title add-drink">
         What did you drink?
         <%= form_for [@user, @consumption] do |f| %>
           <%= f.collection_select(:drink, Drink.all, :id, :name) %> 
           <%= f.submit %>
         <% end %>  
+        <!-- <button id="add_drink">add drink</button> -->
       </div>
     </div>
-    <div class="box box-3 bg-pink" id ="hallo"></div>
+    <div class="box box-3 bg-cink" id ="hallo">
+    </div>
+     
 
-    <div class="box box-3" id="drink_form">
-     <button id="add_drink">add drink</button>
+
+    <div class="box box-3">
+    <%= @drink_beer.count %>
     </div>
     <div class="box box-4">
       <div id="drive"></div>
