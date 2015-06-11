@@ -11,7 +11,7 @@ var baseURL = e.currentTarget.baseURI
    // $('#drink_form').emty()
    var form = $($.parseHTML(response)).filter('#drinkForm')
    // $('.add-drink').append(form)
-   $('#drink_form').append(form)
+   $('#drink_form').html(form)
  })
 }
 
@@ -22,27 +22,37 @@ function createConsumption(e) {
  var drinkId = $('#consumption_drink').val()
   $.ajax({
    type: 'POST',
-   url: '/users/12/consumptions',
+   url: '/users/13/consumptions',
    // url: '/users/'+ userId + '/consumptions'
    data: {  
    format: 'json',  
    consumption:{ drink: drinkId } 
    }
  }).done(function(data){
-       console.log(data.drink_name, data.drinks_count, data.drinks_calories, data.drunk_level, data.drive)
+       console.log(data.drink_name, data.drinks_count, data.drinks_calories, data.drunk_level, data.drive, data.drink_shot )
     $('#hallo').append(data.drink_name);
     $('#drink-count').html(data.drinks_count);
     $('#calulate-calories').html(data.drinks_calories);
     $('#calulate-bac').html(data.drinks_bac);
     $('#drunk-level').html(data.drunk_level);
-    $('#drive').html(data.drive);   
+    $('#drive').html(data.drive); 
+    //drunk level     
+    $('#beer').html(data.drink_beer);      
+    $('#wine').html(data.drink_wine);      
+    $('#spirit').html(data.drink_spirit);      
+    $('#shot').html(data.drink_shot);  
+    // $('#drinktoggle').append('<ul id="deleteddrinklist"><li>' + data.drink_name + '</li><button id = "destroy" data-id="' + variable +'>Delete</button></ul>');
+
+
+
+
  })
 }
 
 function populatePage(){
   $.ajax({
     type: 'get',
-    url: '/users/12/consumptions',
+    url: '/users/13/consumptions',
     data: {  
       format: 'json',
       // consumption:{ drink: drinkId } 
@@ -50,7 +60,12 @@ function populatePage(){
   }).done(function(data){
     $('#drink-count').html(data.drinks_count);
     $('#calulate-calories').html(data.totalcalories);
-    $('#calulate-bac').html(data.bac); 
+    $('#calulate-bac').html(data.bac);
+    // drunklevel
+    $('#beer').html(data.drink_beer);      
+    $('#wine').html(data.drink_wine);      
+    $('#spirit').html(data.drink_spirit);      
+    $('#shot').html(data.drink_shot); 
   })
 }
 

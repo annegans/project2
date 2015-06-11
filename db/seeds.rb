@@ -10,12 +10,12 @@ User.delete_all
 Consumption.delete_all
 Drink.delete_all
 
-u1 = User.create( weight: 65, height: 1.76, sex: true, name: 'anne', age: 24)
+u1 = User.create( weight: 65, height: 1.76, sex: true, name: 'ANNE', age: 24)
 
-d1 = Drink.create( name: 'beer', calories: 123, size: 23.5)
-d2 = Drink.create( name: 'wine', calories: 10, size: 23.5)
-d3 = Drink.create( name: 'strong alcohol', calories: 123, size: 23.5)
-d4 = Drink.create( name: 'shot', calories: 143, size: 23.5)
+d1 = Drink.create( name: 'Beer', calories: 155, size: 23.5)
+d2 = Drink.create( name: 'Wine', calories: 132, size: 23.5)
+d3 = Drink.create( name: 'Spirit', calories: 123, size: 23.5)
+d4 = Drink.create( name: 'Shot', calories: 97, size: 23.5)
 
 
 c1 = Consumption.create(drink_id: d1.id)
@@ -24,7 +24,7 @@ c3 = Consumption.create(drink_id: d3.id)
 c4 = Consumption.create(drink_id: d4.id)
 
 
-u1.consumptions << c1
-u1.consumptions << c2
-u1.consumptions << c3
-u1.consumptions << c4
+# u1.consumptions << c1
+# u1.consumptions << c2
+# u1.consumptions << c3
+# u1.consumptions << c4

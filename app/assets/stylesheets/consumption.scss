@@ -1,80 +1,108 @@
-
 $prim-color: pink;
 $sec-color: blue;
 $thirs-color: red;
+@import url(http://fonts.googleapis.com/css?family=Fjalla+One);
 
+.head {
+  margin-bottom: -1%;
+  margin-top: 0.8%;
+  margin-left: 1.4%;
+}
 
 .container {
   padding: 20px;
 }
 
-
 .box {
   display: inline-block;
   vertical-align: top;
-  margin-right: -6px;
-  height: 300px;
+  // margin-right: -6px;
+  height: 260px;
   border: 1px solid black;
+  box-sizing: border-box;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  background-color: black;
+  transition: all 0.5s;
+  
 
+  &.col-3 {
+    width: 32.3%;
+    min-width: 300px
+  }
+
+
+  &.col-4 {
+    width: 24%;
+    min-width: 300px;
+    
+
+  }
+
+  &.col-5 {
+    width: 32.3%;
+    min-width: 300px;
+  
+  }
 }
 
-.box-1 {
-  width: 10%;
+.box:hover {
+  background-color: blue;
 }
 
-.box-2 {
-  width: 20%;
-}
+// #hallo:hover {
+//   background-image: url(http://alysiamontano.com/wp-content/uploads/2013/01/Blu-BKGD.jpg);
+//   background-size: cover;
+// }
 
-.box-3 {
-  width: 30%;
-}
 
 .box-4 {
-  width: 40%;
-}
-
-.box-5 {
-  width: 50%;
-}
-
-.box-6 {
-  width: 60%;
-}
-
-.box-7 {
-  width: 70%;
-}
-
-.box-8 {
-  width: 80%;
-}
-
-.box-9 {
-  width: 90%;
-}
-
-.box-10 {
-  width: 100%;
+  display: inline-block;
+  margin-right: -4px;
+  width: 25%;
+  vertical-align: top;
+  color: white;
+  text-align: center;
 }
 
 .bg-pink {
   background-color: $prim-color;
 }
 
-.box-title {
+.box-title{
   font-size: 16px;
   font-weight: 100;
-  color: black;
+  color: white;
   text-align: center;
   padding: 117px;
   font-size: 20px;
+  font-family: 'Fjalla One', sans-serif;
+  padding: 68px;
+  font-size: 27px;
+
+  .sub-heading{
+    color: white;
+    padding: 17px;
+
+
+  }
+
 }
 
-
-.subheadding{
-
+.description {
+  color: white;
+  margin-top: -6px;
+  margin-left: 12px;
+  font-size: 13px;
 }
+
+.description-right{
+  color: white;
+  margin-top: -6px;
+  margin-left: 187px;
+  font-size: 13px;
+}
+
 
 #deletedrinklist {
   display: inline-block;
@@ -83,6 +111,9 @@ $thirs-color: red;
 #drink-list {
   overflow: scroll;
 }
+
+
+
 
 /*****
 
@@ -103,4 +134,153 @@ jQuery and animations
 #adddrinktoggle {
   display: none;
 }
+
+
+// /* entire container, keeps perspective */
+// .flip-container {
+//   perspective: 1000;
+// }
+//   /* flip the pane when hovered */
+//   .flip-container:hover .flipper, .flip-container.hover .flipper {
+//     transform: rotateY(180deg);
+//   }
+
+// .flip-container, .front, .back {
+//   width: 320px;
+//   height: 260px;
+// }
+
+// /* flip speed goes here */
+// .flipper {
+//   transition: 0.6s;
+//   transform-style: preserve-3d;
+
+//   position: relative;
+// }
+
+// /* hide back of pane during swap */
+// .front, .back {
+//   backface-visibility: hidden;
+
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }
+
+// /* front pane, placed above back */
+// .front {
+//   z-index: 2;
+//   /* for firefox 31 */
+//   transform: rotateY(0deg);
+// }
+
+// /* back, initially hidden pane */
+// .back {
+//   transform: rotateY(180deg);
+// }
+
+
+/***
+  Buttons
+  ***/
+
+button, input[type='submit'] {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 6px 18px;
+  font-size: 18px !important;
+    margin: 21px !important; 
+
+}
+
+#drive {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+  -webkit-animation-duration: 20s;
+  animation-duration: 20s;
+  // -webkit-animation-delay:5s;
+  // animation-delay:5s;
+}
+
+@-webkit-keyframes bounceIn {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    -webkit-animation-timing-function: cubic-bezier(0.400, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.8, .8, .8);
+    transform: scale3d(.8, .8, .8);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(.10, .10, .10);
+    transform: scale3d(.10, .10, .10);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(.97, .97, .97);
+    transform: scale3d(.97, .97, .97);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+// @keyframes bounceIn {
+//   0%, 20%, 40%, 60%, 80%, 100% {
+//     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+//     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+//   }
+
+//   0% {
+//     opacity: 0;
+//     -webkit-transform: scale3d(.8, .8, .8);
+//     transform: scale3d(.8, .8, .8);
+//   }
+
+//   20% {
+//     -webkit-transform: scale3d(1.1, 1.1, 1.1);
+//     transform: scale3d(1.1, 1.1, 1.1);
+//   }
+
+//   40% {
+//     -webkit-transform: scale3d(.9, .9, .9);
+//     transform: scale3d(.9, .9, .9);
+//   }
+
+//   60% {
+//     opacity: 1;
+//     -webkit-transform: scale3d(1.03, 1.03, 1.03);
+//     transform: scale3d(1.03, 1.03, 1.03);
+//   }
+
+//   80% {
+//     -webkit-transform: scale3d(.97, .97, .97);
+//     transform: scale3d(.97, .97, .97);
+//   }
+
+//   100% {
+//     opacity: 1;
+//     -webkit-transform: scale3d(1, 1, 1);
+//     transform: scale3d(1, 1, 1);
+//   }
+// }
+
 
