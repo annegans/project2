@@ -22,7 +22,7 @@ function createConsumption(e) {
  var drinkId = $('#consumption_drink').val()
   $.ajax({
    type: 'POST',
-   url: '/users/16/consumptions',
+   url: '/users/17/consumptions',
    // url: '/users/'+ userId + '/consumptions'
    data: {  
    format: 'json',  
@@ -48,7 +48,7 @@ function createConsumption(e) {
 function populatePage(){
   $.ajax({
     type: 'get',
-    url: '/users/16/consumptions',
+    url: '/users/17/consumptions',
     data: {  
       format: 'json',
       // consumption:{ drink: drinkId } 
@@ -74,7 +74,7 @@ function deleteConsumption(e){
   console.log('works')
   $.ajax({
   type: "DELETE",
-  url: "/users/16/consumptions/" + consumptionId,
+  url: "/users/17/consumptions/" + consumptionId,
   dataType: 'json'
 }).done(function(data){
   console.log(data);
@@ -165,6 +165,11 @@ $('#hallo').click(function() {
 
 
 $('.one').click(function(){
+       $('.box').css({
+      'border': '1px solid white'
+
+      });
+
    $('.one').css({
       'background-image': 'url("/assets/een.gif")',
       'background-size': 'cover'
@@ -176,7 +181,7 @@ $('.one').click(function(){
       });
 
     $('.three').css({
-      'background-image': 'url("/assets/three.gif")',
+      'background-image': 'url("/assets/eleven.gif")',
       'background-size': 'cover'
       });
 
@@ -189,7 +194,7 @@ $('.one').click(function(){
       'background-size': 'cover'
       });
     $('.six').css({
-      'background-image': 'url("/assets/six.gif")',
+      'background-image': 'url("/assets/twelve.gif")',
       'background-size': 'cover'
       });
     $('.seven').css({
