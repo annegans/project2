@@ -21,15 +21,17 @@ class Consumption < ActiveRecord::Base
 
  def self.drunk_level(bac) 
    if bac < 0.3
-    "drink up mate"
+    "Drink up mate"
    elsif bac > 0.2 && bac < 0.5
-    "you're getting there"
+    "You're getting there"
    elsif bac > 0.5 && bac < 0.9
-    "heals in the seeling"
+    "Heals in the seeling"
    elsif bac > 0.9 && bac < 1
-    "the first one to oblivian wins!!!"
-   else  bac > 1 && bac > 1.5
-    "you're just shit faced"
+    "The first one to oblivian wins!!!"
+   elsif bac >1 && bac < 2
+    'Piss ass drunk'
+   else  bac > 2 && bac > 2.5
+    "You're just shit faced!"
   end
  end
 
@@ -37,7 +39,7 @@ class Consumption < ActiveRecord::Base
   if bac < 0.5
     "you can drive"
   else 
-    "do not drive"
+    "DO NOT DRIVE, YOU HAD ONE TO MANY"
   end
 end
 

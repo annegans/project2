@@ -3,14 +3,18 @@ $sec-color: blue;
 $thirs-color: red;
 @import url(http://fonts.googleapis.com/css?family=Fjalla+One);
 
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
 .head {
   margin-bottom: -1%;
-  margin-top: 0.8%;
+
   margin-left: 1.4%;
 }
 
 .container {
-  padding: 20px;
+  padding: 25px;
+ 
+
 }
 
 .box {
@@ -46,12 +50,8 @@ $thirs-color: red;
   }
 }
 
-.box:hover {
-  background-color: blue;
-}
-
 // #hallo:hover {
-//   background-image: url(http://alysiamontano.com/wp-content/uploads/2013/01/Blu-BKGD.jpg);
+//   background-image: url('/assets/giphy.gif');
 //   background-size: cover;
 // }
 
@@ -63,11 +63,28 @@ $thirs-color: red;
   vertical-align: top;
   color: white;
   text-align: center;
+  margin-top: 54px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 19px;
+  letter-spacing: 1.5px;
+
 }
 
-.bg-pink {
-  background-color: $prim-color;
+.box-1 {
+  display: inline-block;
+  margin-right: -4px;
+  width: 21%;
+  vertical-align: top;
+  color: white;
+  text-align: center;
+  margin-top: 54px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 19px;
+  letter-spacing: 1.5px;
+
 }
+
+
 
 .box-title{
   font-size: 16px;
@@ -79,30 +96,56 @@ $thirs-color: red;
   font-family: 'Fjalla One', sans-serif;
   padding: 68px;
   font-size: 27px;
+  letter-spacing: 1.5px;
+  list-style-type: none;
 
   .sub-heading{
     color: white;
     padding: 17px;
-
-
+    letter-spacing: 1.5px;
   }
 
+  ul{
+    list-style-type: none;
+  }
 }
+
 
 .description {
   color: white;
   margin-top: -6px;
   margin-left: 12px;
   font-size: 13px;
+  font-family: 'Ubuntu', sans-serif;
+  letter-spacing: 1.5px;
 }
+
+// .userinfo{
+//   color: white;
+
+//   font-size: 15px;
+//   font-family: 'Ubuntu', sans-serif;
+//   letter-spacing: 1.5px;
+// }
 
 .description-right{
   color: white;
   margin-top: -6px;
-  margin-left: 187px;
+  margin-left: 176px;
   font-size: 13px;
+  font-family: 'Ubuntu', sans-serif;
+  letter-spacing: 1.5px;
 }
 
+.description-special{
+  color: white;
+  font-size: 13px;
+  font-family: 'Ubuntu', sans-serif;
+  letter-spacing: 1.5px;
+  position: absolute;
+  right: 11px;
+  top: 218px;
+}
 
 #deletedrinklist {
   display: inline-block;
@@ -110,9 +153,8 @@ $thirs-color: red;
 
 #drink-list {
   overflow: scroll;
+
 }
-
-
 
 
 /*****
@@ -134,6 +176,121 @@ jQuery and animations
 #adddrinktoggle {
   display: none;
 }
+
+#hallo{
+  overflow-y: scroll;
+}
+
+
+/***
+  Buttons
+  ***/
+
+button, input[type='submit'] {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 6px 18px;
+  font-size: 18px !important;
+  margin: 21px !important; 
+  text-transform: uppercase;
+
+}
+
+.myClass {
+    background-color: red;
+    color: white;
+    font-size: 44px;
+}
+
+// #drive {
+//   -webkit-animation-name: bounceIn;
+//   animation-name: bounceIn;
+//   -webkit-animation-duration: 20s;
+//   animation-duration: 20s;
+//   // -webkit-animation-delay:5s;
+//   // animation-delay:5s;
+// }
+
+// @-webkit-keyframes bounceIn {
+//   0%, 20%, 40%, 60%, 80%, 100% {
+//     -webkit-animation-timing-function: cubic-bezier(0.400, 0.610, 0.355, 1.000);
+//     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+//   }
+
+//   0% {
+//     opacity: 0;
+//     -webkit-transform: scale3d(.8, .8, .8);
+//     transform: scale3d(.8, .8, .8);
+//   }
+
+//   20% {
+//     -webkit-transform: scale3d(1.1, 1.1, 1.1);
+//     transform: scale3d(1.1, 1.1, 1.1);
+//   }
+
+//   40% {
+//     -webkit-transform: scale3d(.10, .10, .10);
+//     transform: scale3d(.10, .10, .10);
+//   }
+
+//   60% {
+//     opacity: 1;
+//     -webkit-transform: scale3d(1.03, 1.03, 1.03);
+//     transform: scale3d(1.03, 1.03, 1.03);
+//   }
+
+//   80% {
+//     -webkit-transform: scale3d(.97, .97, .97);
+//     transform: scale3d(.97, .97, .97);
+//   }
+
+//   100% {
+//     opacity: 1;
+//     -webkit-transform: scale3d(1, 1, 1);
+//     transform: scale3d(1, 1, 1);
+//   }
+// }
+
+// @keyframes bounceIn {
+//   0%, 20%, 40%, 60%, 80%, 100% {
+//     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+//     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+//   }
+
+//   0% {
+//     opacity: 0;
+//     -webkit-transform: scale3d(.8, .8, .8);
+//     transform: scale3d(.8, .8, .8);
+//   }
+
+//   20% {
+//     -webkit-transform: scale3d(1.1, 1.1, 1.1);
+//     transform: scale3d(1.1, 1.1, 1.1);
+//   }
+
+//   40% {
+//     -webkit-transform: scale3d(.9, .9, .9);
+//     transform: scale3d(.9, .9, .9);
+//   }
+
+//   60% {
+//     opacity: 1;
+//     -webkit-transform: scale3d(1.03, 1.03, 1.03);
+//     transform: scale3d(1.03, 1.03, 1.03);
+//   }
+
+//   80% {
+//     -webkit-transform: scale3d(.97, .97, .97);
+//     transform: scale3d(.97, .97, .97);
+//   }
+
+//   100% {
+//     opacity: 1;
+//     -webkit-transform: scale3d(1, 1, 1);
+//     transform: scale3d(1, 1, 1);
+//   }
+// }
 
 
 // /* entire container, keeps perspective */
@@ -178,109 +335,4 @@ jQuery and animations
 // .back {
 //   transform: rotateY(180deg);
 // }
-
-
-/***
-  Buttons
-  ***/
-
-button, input[type='submit'] {
-  background-color: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 6px 18px;
-  font-size: 18px !important;
-    margin: 21px !important; 
-
-}
-
-#drive {
-  -webkit-animation-name: bounceIn;
-  animation-name: bounceIn;
-  -webkit-animation-duration: 20s;
-  animation-duration: 20s;
-  // -webkit-animation-delay:5s;
-  // animation-delay:5s;
-}
-
-@-webkit-keyframes bounceIn {
-  0%, 20%, 40%, 60%, 80%, 100% {
-    -webkit-animation-timing-function: cubic-bezier(0.400, 0.610, 0.355, 1.000);
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  }
-
-  0% {
-    opacity: 0;
-    -webkit-transform: scale3d(.8, .8, .8);
-    transform: scale3d(.8, .8, .8);
-  }
-
-  20% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-    transform: scale3d(1.1, 1.1, 1.1);
-  }
-
-  40% {
-    -webkit-transform: scale3d(.10, .10, .10);
-    transform: scale3d(.10, .10, .10);
-  }
-
-  60% {
-    opacity: 1;
-    -webkit-transform: scale3d(1.03, 1.03, 1.03);
-    transform: scale3d(1.03, 1.03, 1.03);
-  }
-
-  80% {
-    -webkit-transform: scale3d(.97, .97, .97);
-    transform: scale3d(.97, .97, .97);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-// @keyframes bounceIn {
-//   0%, 20%, 40%, 60%, 80%, 100% {
-//     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-//     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-//   }
-
-//   0% {
-//     opacity: 0;
-//     -webkit-transform: scale3d(.8, .8, .8);
-//     transform: scale3d(.8, .8, .8);
-//   }
-
-//   20% {
-//     -webkit-transform: scale3d(1.1, 1.1, 1.1);
-//     transform: scale3d(1.1, 1.1, 1.1);
-//   }
-
-//   40% {
-//     -webkit-transform: scale3d(.9, .9, .9);
-//     transform: scale3d(.9, .9, .9);
-//   }
-
-//   60% {
-//     opacity: 1;
-//     -webkit-transform: scale3d(1.03, 1.03, 1.03);
-//     transform: scale3d(1.03, 1.03, 1.03);
-//   }
-
-//   80% {
-//     -webkit-transform: scale3d(.97, .97, .97);
-//     transform: scale3d(.97, .97, .97);
-//   }
-
-//   100% {
-//     opacity: 1;
-//     -webkit-transform: scale3d(1, 1, 1);
-//     transform: scale3d(1, 1, 1);
-//   }
-// }
-
 

@@ -1,10 +1,11 @@
 
-<div class="head">YOUR PERSONAL ALCOHOL TRACKER </div>
+
 <div class="container">
+<!-- <div class="head">YOUR PERSONAL ALCOHOL TRACKER </div> -->
 
   <div class="box-container">
 
-    <div class="box col-3 margin-right">
+    <div class="box col-3 one margin-right">
       <div class="box-title">
         COUNT
         <div class="sub-heading" id="calulate-bac"></div>  
@@ -12,15 +13,15 @@
       <p class="description">BLOOD ALCOHOL LEVEL</p>
     </div>
 
-    <div class="box col-3 ">
+    <div class="box col-3 two">
       <div class="box-title">
-         ALCOHOL <%= @user.name %>TRACKER
+        <%= @user.name %> ALCOHOL TRACKER
        <!--  <div class="sub-heading"></div> -->
-        <button class="userinfo">info</button>
+        <button class="userinfo">INFO</button>
       </div>
     </div>
 
-    <div class="box col-3 margin-left">
+    <div class="box col-3 margin-left three">
       <div class="box-title">
         AMOUNT 
       <div class="sub-heading" id="calulate-calories"></div>
@@ -29,19 +30,31 @@
     </div>
   </div>
 
-  <div id="usertoggle">
-    <div class="userinfo">
+  <div  class="box"id="usertoggle">
+    <div>
       USERS INFO
-      <div class="sub-heading"><%= @user.name %></div>
-      <div class="sub-heading"><%= @user.height %></div>
-      <div class="sub-heading"><%= @user.weight %></div>
-      <div class="sub-heading"><%= @user.age %></div>
+      <div class="box-1">
+        <h2 class="">Name:</h2>
+        <div class="sub-heading"><%= @user.name %></div>
+      </div>
+      <div class="box-1">
+        <h2 class="">Height:</h2>
+        <div class="sub-heading"><%= @user.height %></div>
+      </div>
+      <div class="box-1">
+        <h2 class="">Weight:</h2>
+        <div class="sub-heading"><%= @user.weight %></div>
+      </div>
+      <div class="box-1">
+        <h2 class="">Age:</h2>
+        <div class="sub-heading"><%= @user.age %></div>
+      </div>
     </div>
   </div>
 
   <div class="box-container">
 
-  <div class="box col-4 black">
+  <div class="box col-4 black four">
       <div class="box-title">
         AMOUNT
         <div class="sub-heading" id="drink-count"></div>
@@ -49,19 +62,20 @@
       <p class="description-right">YOUR TOTAL SCORE</p>
     </div>
 
-    <div class="box col-4 white">
+    <div class="box col-4 white five">
       <div class="box-title" id="drink_form">
         ADD A DRINK
-        <button id="add_drink">add drink</button>
+        <button id="add_drink">ADD DRINK</button>
      </div>
     </div>
      
-     <div class="box col-4 black box-title">
+     <div class="box col-4 black box-title six">
       <div id= "drunk-level"></div>
+      <p class="description-special">LEVEL OF DRUNKNESS</p>
     </div>
   
 
-    <div class="box col-4 white">
+    <div class="box col-4 white change seven" >
       <div class="box-title" id="drink-list">
         GET SOBER 
         <div><button class="drinkinfo">LIST</button></div>
@@ -83,23 +97,19 @@
       <div class="box-title add-drink">
         What did you drink?
         <%= form_for [@user, @consumption] do |f| %>
-          <%= f.collection_select(:drink, Drink.all, :id, :name) %> 
+          <%= f.collection_select(:drink, Drink.all, :id, :name) %>
           <%= f.submit %>
         <% end %>  
-        <button id="add_drink">add drink</button>
+        <button id="add_drink">ADD DRINK</button>
       </div>
     </div>
   </div>
   
   <div class="box-container" >
    
-    <div class="box bg-cink col-5 box-title" id="hallo"></div>
+    <div class="box bg-cink col-5 box-title eight" id="hallo"></div>
        
-    <div class="box col-5">
-      <div class="box-title" id="drive"></div>
-    </div>
-      
-    <div class="box col-5 ">
+    <div class="box col-5 nine">
       <div class="box-4">
         <h2 class="">BEERS</h2>
         <div class="title-drink" id="beer"></div>
@@ -113,13 +123,16 @@
         <div class="title-drink" id="spirit"></div>
       </div>
       <div class="box-4">
-        <h2>SHOT  </h2>
-        <div class="title-drink" id="shot"></div>
+        <h2>SHOT </h2>
+        <div class="title-drink sub-heading" id="shot"></div>
       </div>
+    </div>
+      
+    <div class="box col-5 ten ">
+      <div class="box-title" id="drive"></div>
     </div>
   </div>
 </div>
-
 
 <!-- <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
 

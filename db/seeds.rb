@@ -24,7 +24,7 @@ c3 = Consumption.create(drink_id: d3.id)
 c4 = Consumption.create(drink_id: d4.id)
 
 
-# u1.consumptions << c1
+u1.consumptions << c1
 # u1.consumptions << c2
 # u1.consumptions << c3
 # u1.consumptions << c4

@@ -22,7 +22,7 @@ function createConsumption(e) {
  var drinkId = $('#consumption_drink').val()
   $.ajax({
    type: 'POST',
-   url: '/users/13/consumptions',
+   url: '/users/16/consumptions',
    // url: '/users/'+ userId + '/consumptions'
    data: {  
    format: 'json',  
@@ -42,17 +42,13 @@ function createConsumption(e) {
     $('#spirit').html(data.drink_spirit);      
     $('#shot').html(data.drink_shot);  
     // $('#drinktoggle').append('<ul id="deleteddrinklist"><li>' + data.drink_name + '</li><button id = "destroy" data-id="' + variable +'>Delete</button></ul>');
-
-
-
-
  })
 }
 
 function populatePage(){
   $.ajax({
     type: 'get',
-    url: '/users/13/consumptions',
+    url: '/users/16/consumptions',
     data: {  
       format: 'json',
       // consumption:{ drink: drinkId } 
@@ -78,7 +74,7 @@ function deleteConsumption(e){
   console.log('works')
   $.ajax({
   type: "DELETE",
-  url: "/users/12/consumptions/" + consumptionId,
+  url: "/users/16/consumptions/" + consumptionId,
   dataType: 'json'
 }).done(function(data){
   console.log(data);
@@ -95,12 +91,12 @@ populatePage();
 setInterval(function(){ 
   populatePage(); 
 }, 1000);
-
+  // eventlisteners
 $("#add_drink").on('click', addConsumption);
 
 $("#drink_form").on('submit', '#new_consumption', createConsumption)
  $('.container').on('click', '#destroy', deleteConsumption)
-
+///toggleclases
 $( ".userinfo" ).click(function() {
   $( "#usertoggle").slideToggle( "slow" );
 });
@@ -115,6 +111,106 @@ $( ".adddrink" ).click(function() {
 
 });
 
+//style change  white
+$('#hallo').click(function() {
+   $('.head').css({
+        'background-color': 'black',
+        'color': 'white'
+
+    }); 
+    $('.container').css({
+        'background-color': 'black',
+
+    });
+
+    $('.box').css({
+        'background-color': 'white',
+    });
+
+    $('.box-title').css({
+        'background-color': 'white',
+        'color': 'black' 
+    });
+
+    $('.sub-heading').css({
+       'color': 'black' 
+    });
+
+    $('.description').css({
+       'background-color': 'white',
+       'color': 'black' 
+    });
+
+    $("button, input[type='submit']").css({
+        'background-color': 'transparent',
+        'border': '2px solid black',
+        'color': 'black',
+        'padding': '6px 18px',
+        'font-size': '18px !important',
+        'margin': '21px !important' 
+    });
+
+    $('.box-4').css({
+        'color': 'black' 
+      });
+
+     $('.description-special').css({
+         'color': 'black' 
+        });
+
+       $('.description-right').css({
+         'color': 'black' 
+        });
+});
+
+
+$('.one').click(function(){
+   $('.one').css({
+      'background-image': 'url("/assets/een.gif")',
+      'background-size': 'cover'
+      });
+
+    $('.two').css({
+      'background-image': 'url("/assets/two.gif")',
+      'background-size': 'cover'
+      });
+
+    $('.three').css({
+      'background-image': 'url("/assets/three.gif")',
+      'background-size': 'cover'
+      });
+
+    $('.four').css({
+      'background-image': 'url("/assets/four.gif")',
+      'background-size': 'cover'
+      });
+    $('.five').css({
+      'background-image': 'url("/assets/five.gif")',
+      'background-size': 'cover'
+      });
+    $('.six').css({
+      'background-image': 'url("/assets/six.gif")',
+      'background-size': 'cover'
+      });
+    $('.seven').css({
+      'background-image': 'url("/assets/seven.gif")',
+      'background-size': 'cover'
+      });
+    $('.eight').css({
+      'background-image': 'url("/assets/eight.gif")',
+      'background-size': 'cover'
+      });
+    $('.nine').css({
+      'background-image': 'url("/assets/nine.gif")',
+      'background-size': 'cover'
+      });
+    $('.ten').css({
+      'background-image': 'url("/assets/ten.gif")',
+      'background-size': 'cover'
+      });
+
+
+})
 
 
 })
